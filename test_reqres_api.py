@@ -49,4 +49,21 @@ def test_delete_user():
     assert response.status_code == 204
     assert response.text == ""
 
-# To run the tests, use the command: pytest -v test_reqres_api.py
+def test_register_successful():
+    """Test POST /register with valid data"""
+    payload = {"email": "sydney@fife", "password": "pistol"}
+    response = requests.post(f"{BASE_URL}/register", json=payload, headers=headers)
+    data = response.json()
+    print(data)
+    assert response.status_code == 400
+    assert "error" in data
+    assert "Note: Only defined users succeed registration" in data['error']
+
+def test_register_unsuccessful():  
+    """Test POST /register with missing password"""
+    payload = {"email": "sydney@fife"}
+    response = requests.post(f"{BASE_URL}/register", json=payload, headers=headers)
+    assert response.status_code == 400
+    data = response.json()
+    assert data["error"] == "Missing password"
+

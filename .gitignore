@@ -17,3 +17,7 @@ htmlcov/
 .pyre/
 .mypy_cache/
 .pytype/
+reports/
+.DS_Store
+.vscode/
+.idea/
