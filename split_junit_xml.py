@@ -1,6 +1,4 @@
 import xml.etree.ElementTree as ET
-import os
-from collections import defaultdict
 import sys
 
 def split_junitxml(input_file: str, output_file: str):
@@ -45,7 +43,7 @@ def split_junitxml(input_file: str, output_file: str):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: python split_junitxml.py input.xml output.xml")
+        print("Usage: python split_junit_xml.py input.xml output.xml")
         sys.exit(1)
 
     split_junitxml(sys.argv[1], sys.argv[2])

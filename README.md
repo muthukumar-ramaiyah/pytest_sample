@@ -336,9 +336,9 @@ def test_get_users(api_client):
 Would you like me to also create a **cheat sheet PDF with all pytest fixture patterns** (basic, scope, autouse, parametrization, dependency) for quick reference?
 
 ```bash
-pytest --junitxml=reports/junit-report.xml
+pytest --junit-xml=reports/junit-report.xml
 ```
 
 ```bash
-python split_junitxml.py reports/junit-report.xml reports/output.xml
+python split_junit_xml.py reports/junit-report.xml reports/output.xml
 ```
